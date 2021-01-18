@@ -10,10 +10,7 @@ const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin"
 const isDevelopment = process.env.NODE_ENV !== "production";
 
 module.exports = {
-  entry: {
-    ReactGreetingWebComponent: "./src/ReactGreetingWebComponent.tsx",
-    BasicWebComponent: "./src/BasicWebComponent.ts",
-  },
+  entry: "./Src/index.ts",
   mode: isDevelopment ? "development" : "production",
   devtool: "source-map",
   module: {

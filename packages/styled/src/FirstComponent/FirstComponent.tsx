@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import x from "./ReactGreetingComponent.css";
+import x from "./FirstComponent.css";
 
 const Wrapper = styled.div`
   ${x.toString()}
   color: hotpink;
 `;
 
-export const Greeting = ({ name }: { name: string }) => {
+export const FirstComponent = ({ name }: { name: string }) => {
   return (
     <Wrapper>
-      <p>Hello, styled component, {name}!</p>
+      <p>Hello, FirstComponent, {name}!</p>
     </Wrapper>
   );
 };

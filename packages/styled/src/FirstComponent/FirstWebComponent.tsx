@@ -1,10 +1,11 @@
 import { LitElement, property, customElement } from "lit-element";
 import React from "react";
 import { render } from "react-dom";
-import { Greeting } from "./ReactGreetingComponent";
+import { FirstComponent } from "./FirstComponent";
 import { StyleSheetManager } from "styled-components";
-@customElement("nb-react-greeting")
-export class SimpleReactGreeting extends LitElement {
+
+@customElement("nb-first-web-component")
+export class FirstWebComponent extends LitElement {
   @property() name = "World";
   constructor() {
     super();
@@ -17,7 +18,7 @@ export class SimpleReactGreeting extends LitElement {
 
     const Root = () => (
       <StyleSheetManager target={this.shadowRoot as any}>
-        <Greeting name={this.name} />
+        <FirstComponent name={this.name} />
       </StyleSheetManager>
     );
 

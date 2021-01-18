@@ -1,12 +1,10 @@
 import { LitElement, html, property, customElement } from "lit-element";
 
-@customElement("nb-greeting")
-export class SimpleGreeting extends LitElement {
+@customElement("nb-basic-web-component")
+export class BasicWebComponent extends LitElement {
   @property() name = "World";
 
   render() {
-    return html`
-      <p>Hello, ${this.name}!</p>
-    `;
+    return html` <p>Hello basic, ${this.name}!</p> `;
   }
 }
