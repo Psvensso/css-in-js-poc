@@ -1,10 +1,9 @@
-const {
-  webpackMerge,
-  htmlOverlay,
-  webpackServeConfig,
-} = require("just-scripts");
+const just = require("just-scripts");
 
-module.exports = webpackMerge(webpackServeConfig, htmlOverlay);
+module.exports = just.webpackMerge.merge(
+  just.webpackServeConfig,
+  just.htmlOverlay
+);
 
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var webpack = require("webpack");
@@ -36,7 +35,6 @@ module.exports = {
         loader: "css-loader",
         options: {
           sourceMap: false,
-          esModule: false,
         },
       },
       {

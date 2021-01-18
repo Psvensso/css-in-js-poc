@@ -1,21 +1,19 @@
 import React from "react";
-import { useReactGreetingEmotion } from "./ReactGreetingEmotionContext";
 import x from "./ReactGreetingComponent.css";
+import { createUseStyles } from "react-jss";
+const useStyles = createUseStyles({
+  wrapper: {
+    color: "hotpink",
+    p: { color: "hotpink" },
+  },
+});
 
 export const Greeting = ({ name }: { name: string }) => {
-  const { css } = useReactGreetingEmotion();
-  const base = css`
-    ${x.toString()}
-  `;
-
+  const classes = useStyles();
+  console.log(x);
   return (
-    <div
-      className={css`
-        ${base}
-        color: hotpink;
-      `}
-    >
-      <p>Hello, {name}!</p>
+    <div className={classes.wrapper}>
+      <p>ReactGreetingComponent, i should be hotpink, Hello, {name}!</p>
     </div>
   );
 };

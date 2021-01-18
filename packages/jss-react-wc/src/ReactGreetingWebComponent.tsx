@@ -1,10 +1,8 @@
 import { LitElement, property, customElement } from "lit-element";
 import React from "react";
-import createEmotion from "@emotion/css/create-instance";
 import { render } from "react-dom";
-import { ReactGreetingEmotionContext } from "./ReactGreetingEmotionContext";
 import { Greeting } from "./ReactGreetingComponent";
-
+import { jss } from "react-jss";
 @customElement("nb-react-greeting")
 export class SimpleReactGreeting extends LitElement {
   @property() name = "World";
@@ -14,17 +12,11 @@ export class SimpleReactGreeting extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    const emotionInstance = createEmotion({
-      container: this.shadowRoot as any,
-      key: "nb-react-greeting",
-      speedy: true,
-    });
+    const mountPoint = document.createElement("span");
+    const reactRoot = this.shadowRoot?.appendChild(mountPoint);
+    //Nope, not injecting into shadow or on the correct place in the dom
+    jss.setup({ insertionPoint: reactRoot });
 
-    render(
-      <ReactGreetingEmotionContext.Provider value={emotionInstance}>
-        <Greeting name={this.name} />
-      </ReactGreetingEmotionContext.Provider>,
-      this.shadowRoot
-    );
+    render(<Greeting name={this.name} />, reactRoot || this);
   }
 }
