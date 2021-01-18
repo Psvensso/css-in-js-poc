@@ -13,10 +13,10 @@ export class SimpleReactGreeting extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     const mountPoint = document.createElement("span");
-    const reactRoot = this.shadowRoot?.appendChild(mountPoint);
+    this.shadowRoot?.appendChild(mountPoint);
     //Nope, not injecting into shadow or on the correct place in the dom
-    jss.setup({ insertionPoint: reactRoot });
+    jss.setup({ insertionPoint: mountPoint });
 
-    render(<Greeting name={this.name} />, reactRoot || this);
+    render(<Greeting name={this.name} />, mountPoint || this);
   }
 }

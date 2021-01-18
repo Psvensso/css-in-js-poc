@@ -1,6 +1,6 @@
 /* Should only affect local shadow */
-p {
-  text-decoration: underline !important;
+.test {
+  text-decoration: underline;
 }
 
 /* Should not leak out */

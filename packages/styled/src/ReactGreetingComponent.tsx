@@ -1,21 +1,16 @@
 import React from "react";
-import { useReactGreetingEmotion } from "./ReactGreetingEmotionContext";
+import styled from "styled-components";
 import x from "./ReactGreetingComponent.css";
 
-export const Greeting = ({ name }: { name: string }) => {
-  const { css } = useReactGreetingEmotion();
-  const base = css`
-    ${x.toString()}
-  `;
+const Wrapper = styled.div`
+  ${x.toString()}
+  color: hotpink;
+`;
 
+export const Greeting = ({ name }: { name: string }) => {
   return (
-    <div
-      className={css`
-        ${base}
-        color: hotpink;
-      `}
-    >
-      <p>Hello, {name}!</p>
-    </div>
+    <Wrapper>
+      <p>Hello, styled component, {name}!</p>
+    </Wrapper>
   );
 };

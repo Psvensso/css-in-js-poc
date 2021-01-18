@@ -40,6 +40,7 @@
     "@babel/core": "^7.0.0",
     "to-string-loader": "1.1.6",
     "styled-components": "^5.2.1",
+    "@types/styled-components": "^5.1.7",
     "css-loader": "^5.0.1",
     "sass-loader": "^10.1.1"
   }

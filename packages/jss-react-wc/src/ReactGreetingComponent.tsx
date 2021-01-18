@@ -1,5 +1,5 @@
 import React from "react";
-import x from "./ReactGreetingComponent.css";
+import Styles from "./ReactGreetingComponent.module.css";
 import { createUseStyles } from "react-jss";
 const useStyles = createUseStyles({
   wrapper: {
@@ -10,9 +10,9 @@ const useStyles = createUseStyles({
 
 export const Greeting = ({ name }: { name: string }) => {
   const classes = useStyles();
-  console.log(x);
+
   return (
-    <div className={classes.wrapper}>
+    <div className={classes.wrapper + " " + Styles.test}>
       <p>ReactGreetingComponent, i should be hotpink, Hello, {name}!</p>
     </div>
   );
