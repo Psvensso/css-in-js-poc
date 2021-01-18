@@ -2,6 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
+    "emotion": "lerna run start --stream --scope emotion-react-wc",
     "jss": "lerna run start --stream --scope jss",
     "styled": "lerna run start --stream --scope styled-react-wc"
   },
