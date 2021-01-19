@@ -11,7 +11,11 @@ export class FirstWebComponent extends LitElement {
   constructor() {
     super();
   }
-
+  createRenderRoot(): Element | ShadowRoot {
+    //This is the default implementation.
+    //Making the shadow closed limits the access to this.shadowRoot
+    return this.attachShadow({ mode: "open" });
+  }
   connectedCallback() {
     super.connectedCallback();
     const reactContainer = document.createElement("span");
